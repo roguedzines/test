@@ -11,3 +11,6 @@ Author: Li-Shann Tomchik
 Version: 1.6
 Author URI: http://weissinc.com
 */
+function hello(){
+  echo 'Hello World';
+}
