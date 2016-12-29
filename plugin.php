@@ -1,7 +1,7 @@
 <?php
 /**
  * @package Weiss Custom
- * @version 1.0
+ * @version 1.1
  */
 /*
 Plugin Name: Weiss Custom Plugin
