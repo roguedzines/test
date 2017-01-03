@@ -25,6 +25,17 @@ function weisscp_install() {
     deactivate_plugins( basename( __FILE__ ) ); // Deactivate our plugin
   }
 }
+// add_action( 'admin_menu', 'weisscp_admin_settings_page' );
+// function weisscp_admin_settings_page() {
+//   add_options_page(
+//     'Weiss Settings',
+//     'Weiss Settings',
+//     'manage_options',
+//     'weisscp_admin_settings',
+//     'weisscp_admin_settings_page'
+//    );
+//  }
+
 
 add_action( 'admin_menu', 'weisscp_add_admin_menu' );
 add_action( 'admin_init', 'weisscp_settings_init' );
@@ -36,7 +47,7 @@ function weisscp_add_admin_menu(  ) {
                    'Weiss Custom Plugin',
                    'manage_options',
                    'weiss_custom_plugin',
-                   'weisscp__options_page'
+                   'weisscp_options_page'
                  );
 
 }
@@ -48,7 +59,7 @@ function weisscp_settings_init(  ) {
 
  add_settings_section(
    'weisscp_pluginPage_section',
-   __( 'Section description', 'weisscp_' ),
+   __( 'Your section description', 'weisscp_' ),
    'weisscp_settings_section_callback',
    'pluginPage'
  );
@@ -70,7 +81,7 @@ function weisscp_settings_init(  ) {
  );
 
  add_settings_field(
-   'weisscp__radio_field_2',
+   'weisscp_radio_field_2',
    __( 'Settings field description', 'weisscp_' ),
    'weisscp_radio_field_2_render',
    'pluginPage',
@@ -131,7 +142,7 @@ function weisscp_textarea_field_3_render(  ) {
 
  $options = get_option( 'weisscp_settings' );
  ?>
- <textarea cols='40' rows='5' name='weisscp__settings[weisscp_textarea_field_3]'>
+ <textarea cols='40' rows='5' name='weisscp_settings[weisscp_textarea_field_3]'>
    <?php echo $options['weisscp_textarea_field_3']; ?>
  </textarea>
  <?php
@@ -160,7 +171,7 @@ function weisscp_settings_section_callback(  ) {
 }
 
 
-function weisscp__options_page(  ) {
+function weisscp_options_page(  ) {
 
  ?>
  <form action='options.php' method='post'>
